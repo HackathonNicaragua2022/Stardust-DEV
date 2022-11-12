@@ -1,4 +1,5 @@
 from django.contrib import admin
+from .models import Raza, Vacuna, Hato, Bovino
 
 # Register your models here.
 @admin.register(Raza)

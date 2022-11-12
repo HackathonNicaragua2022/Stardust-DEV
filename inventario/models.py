@@ -28,5 +28,10 @@ class Bovino(models.Model):
         """Create a string for the Vacuna. This is required to display Vacuna in Admin."""
         return ', '.join(vacuna.NombreVacuna for vacuna in self.VacunasBovino.all())
 
-        display_vacunas.short_description = 'Vacunas'
+    display_vacunas.short_description = 'Vacunas'
+    
+    def NuevoBovino(datos):
+        pass    
+
+    
     

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+
+*{ font-family: 'Mukta', sans-serif; overflow: hidden; margin: 0; padding: 0; }
+
+body{ display: flex; }
+a{ text-decoration: none; color: black; }
+
+/* ========================= BARRA LATERAL ========================= */
+
+.barraLateral{ width: 20%; height: 100vh; display: block; }
+.barraLateral-logo{ margin: auto; }
+.barraLateral-logo img{ margin-top: 20px; margin-left: 50px; margin-bottom: 120px; width: 130px; height: 140px; }
+.enlacesBarraLateral{ margin: auto; width: 60%; font-size: 20px; display: flex; margin-top: 20px; }
+.enlacesBarraLateral:hover{ border-bottom: 1px solid black; color: #469762; }
+.logout{ margin-top: 80%; }
+.recuadro-iconoBarraLateral{ margin-right: 10px; }
+.recuadro-iconoBarraLateral .iconoBarraLateral{ margin-top: 10%; }
+.iconoBarraLateral{ width: 25px; height: 25px; }
+
+/* ========================= CONTENIDO ========================= */
+
+.fondo-contenido{
+    width: 100vw;
+    height: 100vh;
+    background-color: #e5e5e5;
+}
+
+/* ========================= SECCION AFECTABLE ========================= */
+
+/* ------------------------- INVENTARIO ------------------------- */
+.fondo-inventario-title{
+    padding: 15px 0 10px 70px;
+    font-size: 35px;
+    color: black;
+    display: flex;
+}
+
+.fondo-inventario-title button{
+    width: 90px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.fondo-inventario-bottom{
+    margin-left: 40%;
+}
+
+.fondo-inventario-bottom select{
+    width: 90px;
+    height: 30px;
+    margin-right: 80px;
+}
+
+.fondo-inventario-bottom .iconoBarraLateral{
+    margin-bottom: -6px;
+}
+
+.fondo-inventario-contenido{
+    width: 80%;
+    height: 85%;
+    margin-left: 1.7%;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.fondo-inventario-bottom > select{
+    
+    border:none;
+    border-radius: 5%;
+}
+/* ------------------------------------------------------------- */

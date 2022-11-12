@@ -1,10 +1,38 @@
-{% extends "inicio/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %}
+    <link rel="stylesheet" href="{% static 'inicio/CSS/inicio.css' %}">
+    <script src="{% static 'inicio/JS/inicio.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
 
-{% endblock %}
+    <section>
+        <div class="enlaces-index" onclick="gotoURL('inventario');">
+            <strong>Inventario</strong>
+            <div class="index-base">
+                <img src="{% static 'inicio/assets/Inventario.svg' %}" height="150" height="150" alt="">
+            </div>
+        </div>
+        <div class="enlaces-index" onclick="gotoURL('registros');">
+            <strong>Registros</strong>
+            <div class="index-base">
+                <img src="{% static 'inicio/assets/Registros.svg' %}"  width="150" alt="">
+            </div>
+        </div>
+        <div class="enlaces-index" onclick="gotoURL('reportes');">
+            <strong>Reportes</strong>
+            <div class="index-base">
+                <img src="{% static 'inicio/assets/Reportes.svg'%}" width="150" alt="">
+            </div>
+        </div>
+    </section>
     
+</body>
+</html>
 
-{% block body %}
- aaaaaaaaaaa
-{% endblock %}

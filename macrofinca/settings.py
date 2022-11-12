@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'macrofinca.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': env('DB_ENGINE'),
         'NAME': BASE_DIR / env('DB_NAME'),
     }
 }

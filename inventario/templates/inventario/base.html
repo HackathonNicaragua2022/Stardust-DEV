@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'inventario/CSS/inventario.css' %}">
+
+    <title>Inventario - {% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <!-- ========================= BARRA LATERAL ========================= -->
+    <nav class="barraLateral">
+        <div class="barraLateral-logo">
+            <img src="{% static 'inventario/assets/logoBarra.png' %}" alt="">
+        </div>  
+        <div class="enlacesBarraLateral">
+            <div class="recuadro-iconoBarraLateral"><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}" alt=""></div>
+            <div class="recuadro-iconoBarraLateral"><a href="#">Inventario</a></div>
+        </div>
+        <div class="enlacesBarraLateral">
+            <div class="recuadro-iconoBarraLateral"><img class="iconoBarraLateral" src="{% static 'inventario/assets/reportes.png' %}" alt=""></div>
+            <div class="recuadro-iconoBarraLateral"><a href="#">Reportes</a></div>
+        </div>
+        <div class="enlacesBarraLateral">
+            <div class="recuadro-iconoBarraLateral"><img class="iconoBarraLateral" src="{% static 'inventario/assets/registros.png' %}" alt=""></div>
+            <div class="recuadro-iconoBarraLateral"><a href="#">Registros</a></div>
+        </div>
+        <div class="enlacesBarraLateral logout">
+            <div class="recuadro-iconoBarraLateral"><img class="iconoBarraLateral" src="{% static 'inventario/assets/registros.png' %}" alt=""></div>
+            <div class="recuadro-iconoBarraLateral"><a href="#">Logout</a></div>
+        </div>
+    </nav>
+    <!-- ========================= CONTENIDO ========================= -->
+    <section class="contenido">
+        <div class="fondo-contenido">
+            <!-- ========================= AFECTABLE ========================= -->
+            {% block body %} {% endblock %}
+            
+         
+            <!-- ============================================================= -->
+        </div>
+    </section>
+
+</body>
+</html>

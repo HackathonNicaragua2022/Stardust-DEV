@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 # Create your views here.
 
-def inventario(request):
-    return HttpResponse("Plantilla de inventario")
+def inventarioview(request):
+    return render(request,"inventario/index.html")
+
+def getHatos(request):
+    pass
 
 def agregar_raza(request):
     if request.method == "GET":

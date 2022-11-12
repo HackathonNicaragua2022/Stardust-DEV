@@ -1,10 +1,47 @@
-{% extends "inicio/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %}
+    <link rel="stylesheet" href="{% static 'inicio/CSS/login.css' %}">
+    <script src="{% static 'inicio/JS/login.js' %}"></script>
+    <title>Iniciar Sesíon</title>
+</head>
+<body>
+    <section>
+        <div class="logo-login">
+            <div class="logo-text">
+                <strong>Bienvenido a MacroFinca</strong>
+            </div>
+            <div class="logo-img">
+                <img src="{% static 'inicio/assets/logo.png' %}" alt="Logo de MacroFinca">
+            </div>
+        </div>
+        <div class="input-login">
+            <div class="text-title">
+                <strong>Inicia Sesión</strong>
+            </div>
+            <form class="form" action="" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="username">
+                        <span>Nombre de usuario</span>
+                    </label><br>
+                    <input type="text" id="username" name="username"  required>
+                </div>
 
-{% endblock %}
-    
-
-{% block body %}
- aaaaaaaaaaa
-{% endblock %}
+                <div>
+                    <label for="password">
+                        <span>Contraseña</span>
+                    </label><br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button>Iniciar Sesión</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

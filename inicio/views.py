@@ -18,8 +18,8 @@ def login_view(request):
             login(request, user)
             return redirect("/")
         else:
-            return HttpResponse("NODO")
-        return HttpResponse("TODO")
+            return redirect("/")
+
     
     return render(request, "inicio/login.html")
 

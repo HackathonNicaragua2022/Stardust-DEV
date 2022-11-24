@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def reportesview(request):
-    return HttpResponse("Plantilla de reportes")
+    return render(request, "reportes/index.html")

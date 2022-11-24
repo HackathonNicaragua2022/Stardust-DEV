@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def registrosview(request):
-    return HttpResponse("Plantilla de registro")
+    return render(request, "registros/index.html")

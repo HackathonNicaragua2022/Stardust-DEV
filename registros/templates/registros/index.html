@@ -1,0 +1,30 @@
+{% extends "registros/base.html" %}
+{% load static %}
+
+{% block title %}
+    Listado
+{% endblock %}
+    
+
+{% block body %}
+    <div class="fondo-inventario-title">
+        <strong>Registros</strong>
+        <div class="fondo-inventario-bottom">
+            <select name="hato" id="hato">
+                <option value="">Seleccionar Hato</option>
+            </select>
+            <button><b>+</b></button>
+            <button><b>+ </b><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}" alt=""></button>
+        </div>
+    </div>
+    <div class="fondo-inventario-contenido">
+        <table>
+            <thead></thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+
+
+    </div>
+{% endblock %}
+

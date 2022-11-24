@@ -10,18 +10,56 @@
     <div class="fondo-inventario-title">
         <strong>Inventario</strong>
         <div class="fondo-inventario-bottom">
-            <select name="" id="">
+            <select name="hato" id="hato" onchange="actualizar_inventario();">
                 <option value="">Seleccionar Hato</option>
-                
             </select>
             <button><b>+</b></button>
-            <button><b>+ </b><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}" alt=""></button>
+            <button onclick="agregar_bovino();"><b>+ </b><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}" alt=""></button>
         </div>
     </div>
-    <div class="fondo-inventario-contenido">
-
+    <div class="fondo-inventario-contenido" style="padding-left:20px;">
+        <br><br>
+        <table width="100%" border="1">
+            <thead align="center">
+                <th >Codigo</th>
+                <th >Nacimiento</th>
+                <th >Raza</th>
+   
+            </thead>
+            <tbody id="tablacontenido">
+                <tr align="center">
+                    <td>0001</td>
+                    <td>12/09/2022</td>
+                    <td>Brahmán</td>
+              
+                </tr>
+                <tr align="center">
+                    <td>0002</td>
+                    <td>15/09/2022</td>
+                    <td>Brahmán</td>
+                 
+                </tr>
+                <tr align="center">
+                    <td>0003</td>
+                    <td>06/09/2022</td>
+                    <td>Brangus</td>
+                   
+                </tr>
+                <tr align="center">
+                    <td>0004</td>
+                    <td>03/09/2022</td>
+                    <td>Brangus</td>
+                   
+                </tr>
+                
+            </tbody>
+            <tfoot></tfoot>
+        </table>
 
 
     </div>
+    <script src="{% static 'inventario/JS/inventario.js' %}"></script>
+    
+    <script>actualizar_hatos("hato");</script>
 {% endblock %}
 

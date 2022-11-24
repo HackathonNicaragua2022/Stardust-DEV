@@ -4,6 +4,7 @@
 
 body{ display: flex; }
 a{ text-decoration: none; color: black; }
+input{ border: 0; border-bottom: 1px solid black; width: 250px; }
 
 /* ========================= BARRA LATERAL ========================= */
 
@@ -62,10 +63,31 @@ a{ text-decoration: none; color: black; }
     border-radius: 20px;
     background-color: white;
 }
-
-.fondo-inventario-bottom > select{
-    
-    border:none;
-    border-radius: 5%;
+/* ------------------------- AGREGAR A INVENTARIO ------------------------- */
+.agregar-codigoHato-inventario{
+    display: flex;
+    margin-top: 30px;
+    font-size: 20px;
 }
-/* ------------------------------------------------------------- */
+
+.agregar-fechaBovino-inventario{
+    margin-top: 40px;
+    display: flex;
+    font-size: 20px;
+}
+
+.fondo-inventario-bottom > select {
+    width: fit-content;
+}
+
+.codigoBovino, .hatoBovino{ width: 50%; height: 40px; }
+.codigoBovino label{ margin-left: 35px; margin-right: 10px; }
+.hatoBovino label{ margin-right: 10px; margin-left: 60%; }
+.hatoBovino select{ width: 50px; }
+.ultimaVacuna, .ultimoParto, .ultimoCelo{ width: 80%; height: 30px; margin-top: 10px; }
+.ultimaVacuna label, .ultimoParto label, .ultimoCelo label{ margin-left: 35px; margin-right: 10px; }
+.ultimaVacuna label{ margin-right: 20px; } .ultimoParto label{ margin-right: 34px; } .ultimoCelo label{ margin-right: 45px; }
+.ultimaVacuna input, .ultimoParto input, .ultimoCelo input{ width: 140px; font-size: 20px; }
+.agregar-raza-inventario select{ font-size: 15px; margin-top: 20px; }
+.flex-inventario, .agregar-raza-inventario{ width: 50%; }
+.agregar-raza-inventario select{ width: 170px; margin-left: 10px; }

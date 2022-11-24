@@ -69,6 +69,7 @@ def getVacunas(request):
 def getBovinos(request):
 
     hato = request.GET.get("hato")
+    hato = Hato.objects.filter(codigo_hato = hato).first()
 
     bovinos = list(Bovino.objects.filter(hato_bovino = hato))
     data = []
@@ -76,15 +77,16 @@ def getBovinos(request):
     for bovino in bovinos:
         temp = {
             "codigo": bovino.codigo_bovino,
-            "hato": bovino.hato_bovino,
-            "vacunas": bovino.Vacunas,
+            "hato": bovino.hato_bovino.codigo_hato,
+            "vacunas": bovino.display_vacunas(),
             "partos": bovino.partos,
-            "ultimo_parto": bovino.ultimo_parto,
-            "celos": bovino.fecha_celos
+            "ultimo_parto": bovino.display_ultimo_parto(),
+            "celos": bovino.display_fecha_celos()
         }
 
         data.append(temp)
-
+        
+    print(data)
     data = js.dumps(data)
 
     return HttpResponse(data)

@@ -40,7 +40,7 @@ function actualizar_razas(itemID){
 }
 
 function actualizar_bovinos() {
-
+  
 }
 
 function agregar_bovino() {

@@ -24,7 +24,7 @@ class Produccion(models.Model):
     registrado_por = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "Registro de prod"
+        return f"{self.bovino} : {self.cantidad_producida}"
 
 class Venta(models.Model):
     bovino = models.ForeignKey(Bovino, on_delete=models.CASCADE)
@@ -37,6 +37,6 @@ class Venta(models.Model):
     registrado_por = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "Sobres"
+        return f"{self.bovino} : {self.cantidad_vendida} * {self.precio_de_venta}"
 
 

@@ -60,7 +60,7 @@ function actualizar_vacunas(itemID){
 }
 
 function actualizar_bovinos() {
-  
+  let 
 }
 
 function agregar_bovino() {
@@ -75,17 +75,47 @@ function agregar_bovino() {
           title: '<strong>Agregar un nuevo Bovino</strong>',
           width: 800,
           html: ajax.responseText,
-          showCloseButton: true,
+          showCloseButton: false,
           showCancelButton: false,
-          focusConfirm: false,
-          confirmButtonText:
-            'Agregar',
-          confirmButtonAriaLabel: 'Agregar',
 
-        })
+        }).then((result) => {
+          if (result.isConfirmed) {
+            let form
+            let data = new FormData(form);
+
+            let ajax = new XMLHttpRequest();
+            ajax.open("POST","agregarbovino");
+
+            ajax.send(data);
+            ajax.onreadystatechange = function(){
+              if(this.readyState == 4){
+                if(this.status == 200){
+                  Swal.fire(
+                    'Exito',
+                    this.responseText,
+                    'success'
+                    );
+                }
+                else if(this.status == 400){
+                  swal.fire(
+                    'Error',
+                    this.responseText,
+                    'error'
+                    );
+                }
+              }
+            }
+
+        }})
       }
+    
     }
   };
+}
+
+function enviar_bovino(form){
+  
+
 }
 
 

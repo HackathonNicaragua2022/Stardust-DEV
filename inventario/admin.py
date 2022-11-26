@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Raza, Vacuna, Hato, Bovino
+from .models import Raza, Vacuna, Hato, Bovino, Frecuencia
 
 # Register your models here.
 @admin.register(Raza)
@@ -17,3 +17,7 @@ class HatoAdmin(admin.ModelAdmin):
 @admin.register(Bovino)
 class BovinoAdmin(admin.ModelAdmin):
     list_display = ('codigo_bovino', 'raza_bovino', 'hato_bovino', 'display_vacunas', 'partos', 'ultimo_parto', 'fecha_celos')
+
+@admin.register(Frecuencia)
+class FrecuenciaAdmin(admin.ModelAdmin):
+    list_display = ('nombre_frecuencia', 'duracion_frecuencia')

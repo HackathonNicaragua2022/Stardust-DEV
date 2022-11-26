@@ -39,7 +39,7 @@ class Bovino(models.Model):
     hato_bovino = models.ForeignKey(Hato, on_delete=models.CASCADE)
     vacunas_bovino = models.ManyToManyField(Vacuna)
 
-    partos = models.IntegerField()
+    partos = models.IntegerField(default = 0)
     ultima_vacuna = models.DateField(auto_now = False, null=True)
     ultimo_parto = models.DateField(auto_now=False, null=True)
     fecha_celos =  models.DateField(auto_now=False, null=True)

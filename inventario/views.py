@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseBadRequest
 from .models import Raza, Vacuna, Hato, Bovino
-from .helpers import getValidRaza, getvalidVacuna, getvalidFrecuencia
+from .helpers import getValidRaza, getvalidVacuna, getvalidFrecuencia, getvalidHato
 import json as js
 
 # Create your views here.
@@ -136,6 +136,7 @@ def agregar_bovino(request):
         # Valida r y obtener vacuna 
         vacuna_nombre = request.POST.get("vacunasbovino")
         vacuna  =  getvalidVacuna(vacuna_nombre)
+        print(vacuna)
 
         if not vacuna or len(vacuna_nombre) == 0:
             return HttpResponseBadRequest(f"La vacuna {vacuna_nombre} es invalida")
@@ -147,11 +148,16 @@ def agregar_bovino(request):
         NBovino = Bovino()
         NBovino.codigo_bovino = codigo
         NBovino.raza_bovino = raza
-        NBovino.hato = hato
+        NBovino.hato_bovino = hato
         NBovino.partos = 1
         NBovino.ultima_vacuna = fecha_vacuna
         NBovino.ultimo_parto = fecha_ultimop
-        NBovino.fecha_celos = NBovino.fecha_ultimo_celos
+        NBovino.fecha_celos = fecha_ultimo_celos
+
+        NBovino.save()
+
+
+        NBovino.vacunas_bovino.add(vacuna)
 
         NBovino.save()
 

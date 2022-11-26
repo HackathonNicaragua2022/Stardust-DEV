@@ -26,9 +26,11 @@ def getvalidFrecuencia(nombre):
     return frecuencia
 
 def getvalidHato(codigo):
-    hato = Hato.objects.filter(codigo_hato)
+    hato = Hato.objects.filter(codigo_hato = codigo)
 
     if not hato or len(hato) == 0:
         return None
     
     return hato.first()
+
+

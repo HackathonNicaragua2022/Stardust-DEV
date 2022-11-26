@@ -18,13 +18,67 @@
         </div>
     </div>
     <div class="fondo-inventario-contenido">
-        <table>
-            <thead></thead>
-            <tbody></tbody>
-            <tfoot></tfoot>
-        </table>
+        <style>
+            .contenido-interno{
+                margin: 5%;
+            }
+        </style>
+        
+            <div class="contenido-interno">
+                
+                
+                <div class="tabla-int">
+                    
+                    <div class="contendor">
+                        <div class="filtros">
+        
+        
+                            <input type="text" id="q" placeholder="Buscar por Hato"> <button onclick="actualizar_bovino"><img src="{% static 'inventario/assets/lupa.svg' %}" alt="No cargo la imagen" width="10pt"></button>
+                
+                            <select name="" id="meses">
+                                <option value="">Mes de registro</option>
+                            </select>
+                            <select name="" id="ordenarpor">
+                                <option value="">Ultimo</option>
+                                <option value="">Primero</option>
+                            </select>
+                
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <table class="tablaInventario">
+                <tr>
+                    <th>Registro</th>
+                    <th>Periodo</th>
+                    <th>Cantidad de registros</th>
+                    <th></th>
+                </tr>
 
+                <tr>
+                    <td>Inventario</td>
+                    <td></td>
+                    <td>5 Registros</td>
+                    <td><button style="background: rgba(255, 255, 255, 0.01); border: none;" >Ver mas</button></td>
+                </tr>
+       
+                <tr>
+                    <td>Control de Produccion</td>
+                    <td>Noviembre 2022</td>
+                    <td>30 Registros</td>
+                    <td><button style="background: rgba(255, 255, 255, 0.01); border: none;" >Ver mas</button></td>
+                </tr>
+                <tr>
+                    <td>Control de Ventas</td>
+                    <td>Noviembre 2022</td>
+                    <td>25 Registros</td>
+                    <td><button style="background: rgba(255, 255, 255, 0.01); border: none;" >Ver mas</button></td>
+                </tr>
+                
+                
+            </table>
 
+    </div>
     </div>
 {% endblock %}
 

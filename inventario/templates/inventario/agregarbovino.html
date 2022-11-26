@@ -1,5 +1,6 @@
-<form action="agregar_bovino" method="post">
-<div style="text-align: left;">
+<form action="agregarbovino" method="post" id="bovinoformenviar" onsubmit="enviar_bovino(this);">
+{% csrf_token %}
+    <div style="text-align: left;">
     <span>Nuevo Codigo: </span><input name="codigobovino" type="text" maxlength="15"> <br><br>
 <span>Selecione el Hato: </span>
 
@@ -28,6 +29,7 @@
 <br><br>
 
 </div>
+
 
 </form>
 

@@ -27,44 +27,134 @@ Listado
 <div class="fondo-inventario-contenido">
     <div class="contenido-interno">
         
-        <div class="filtros">
-
-
-            <input type="text" id="q" placeholder="Buscar por codigo"> <button onclick="actualizar_bovino"><img src="{% static 'inventario/assets/lupa.svg' %}" alt="No cargo la imagen" width="10pt"></button>
-
-            <select name="" id="meses">
-                <option value="">Mes de registro</option>
-            </select>
-            <select name="" id="ordenarpor">
-                <option value="">Ultimo</option>
-                <option value="">Primero</option>
-            </select>
-
-        </div>
+        
         <div class="tabla-int">
-            <table class="tablaInventario">
-                <tr>
-                    <th>CODIGO</th>
-                    <th>HATO</th>
-                    <th>VACUNAS</th>
-                    <th>PARTOS</th>
-                    <th>ULTIMO P</th>
-                    <th>CELO</th>
-                </tr>
-    
-                <tr>
-                    <td>001</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>13/06/2022</td>
-                    <td>13/06/2022</td>
-                </tr>
-            </table>
+            
+            <div class="contendor">
+                <h3>Control de producion</h3>
+                <div class="filtros">
+
+
+                    <input type="text" id="q" placeholder="Buscar por codigo"> <button onclick="actualizar_bovino"><img src="{% static 'inventario/assets/lupa.svg' %}" alt="No cargo la imagen" width="10pt"></button>
+        
+                    <select name="" id="meses">
+                        <option value="">Mes de registro</option>
+                    </select>
+                    <select name="" id="ordenarpor">
+                        <option value="">Ultimo</option>
+                        <option value="">Primero</option>
+                    </select>
+        
+                </div> 
+            </div>
         </div>
+    </div>
+    <table class="tablaInventario">
+        <tr>
+            <th>Fecha Registrada</th>
+            <th>Codigo</th>
+            <th>Produccion</th>
+            <th></th>
+            <th>Registrado</th>
+            <th>Digitador</th>
+        </tr>
+
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0023</td>
+            <td>25 ltrs</td>
+            <td></td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0026</td>
+            <td>30 ltrs</td>
+            <td></td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0027</td>
+            <td>30 ltrs</td>
+            <td></td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+    </table>
+
+    <div class="contenido-interno">
+        
+        
+        <div class="tabla-int">
+            
+            <div class="contendor">
+                <h3>Control de Ventas</h3>
+                <div class="filtros">
+
+
+                    <input type="text" id="q" placeholder="Buscar por codigo"> <button onclick="actualizar_bovino"><img src="{% static 'inventario/assets/lupa.svg' %}" alt="No cargo la imagen" width="10pt"></button>
+        
+                    <select name="" id="meses">
+                        <option value="">Mes de registro</option>
+                    </select>
+                    <select name="" id="ordenarpor">
+                        <option value="">Ultimo</option>
+                        <option value="">Primero</option>
+                    </select>
+        
+                </div> 
+            </div>
+        </div>
+    </div>
+    <table class="tablaInventario">
+        <tr>
+            <th>Fecha Registrada</th>
+            <th>Codigo</th>
+            <th>Cantidad Vendida</th>
+            <th>Precio de venta</th>
+            <th>Total</th>
+            <th>Registrado</th>
+            <th>Digitador</th>
+        </tr>
+
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0027</td>
+            <td>30 ltrs</td>
+            <td>C$ 35</td>
+            <td>C$ 1, 050</td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0027</td>
+            <td>30 ltrs</td>
+            <td>C$ 35</td>
+            <td>C$ 1, 050</td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+        <tr>
+            <td>23/11/2022</td>
+            <td>#0027</td>
+            <td>30 ltrs</td>
+            <td>C$ 35</td>
+            <td>C$ 1, 050</td>
+            <td>13/06/2022</td>
+            <td>A_Rios</td>
+        </tr>
+    </table>
+
+
 
 
     </div>
+    
 
 </div>
 {% endblock %}

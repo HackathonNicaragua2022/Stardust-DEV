@@ -39,6 +39,26 @@ function actualizar_razas(itemID){
         }}}}
 }
 
+function actualizar_vacunas(itemID){
+  let selectItem = document.getElementById(itemID);
+  selectItem.innerHTML = "<option value=''>Seleccionar Vacuna</option>";
+
+  let ajax = new XMLHttpRequest();
+  ajax.open("GET", "get_vacunas");
+  ajax.send();
+
+  ajax.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        let respuesta = JSON.parse(this.responseText);
+        for (let i = 0; i < respuesta.length; i++) {
+          let temp = document.createElement("option");
+          temp.value = respuesta[i].nombre;
+          temp.textContent = respuesta[i].nombre;
+          selectItem.appendChild(temp);
+        }}}}
+}
+
 function actualizar_bovinos() {
   
 }

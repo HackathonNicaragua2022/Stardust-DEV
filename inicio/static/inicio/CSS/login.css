@@ -30,5 +30,5 @@ section .input-login{ background: linear-gradient(to bottom, #485E74, #4E657C); 
 .input-login .text-title{margin-top: 19%;}
 .form{ width: 80%; margin: auto; margin-top: 40px; }
 .form div{ display: block; }
-.form input{ width: 70%; margin-top: 20px; margin-bottom: 20px; background: none; border: 0; border-bottom: 1px solid white; }
+.form input{ width: 70%; margin-top: 20px; margin-bottom: 20px; background: none; border: 0; border-bottom: 1px solid white; color: white; }
 .form button{ border-radius: 18px; width: 17%; height: 35px; border: 0; background-color: #469762; color: white;  margin-left: 20%; margin-top: 40px;}

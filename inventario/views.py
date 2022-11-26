@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from .models import Raza, Vacuna, Hato, Bovino
+from .helpers import getValidRaza, getvalidVacuna, getvalidFrecuencia
 import json as js
 
 # Create your views here.
@@ -115,5 +116,45 @@ def agregar_bovino(request):
     if request.method == "GET":
         return render(request, "inventario/agregarbovino.html")
     else:
-        pass
+        # Variables obtenidas de formulario
+        codigo = request.POST.get("codigobovino")
+
+        # validar y obtener Hato
+        hato_codigo = request.POST.get("hatosbovino")
+        hato = getvalidHato(hato_codigo)
+
+        if not hato or len(hato_codigo) == 0:
+            return HttpResponseBadRequest("El hato no es valido")
+
+        # Validar y obtener raza
+        raza_nombre = request.POST.get("razabovino")
+        raza = getValidRaza(raza_nombre)
+
+        if not raza or len(raza_nombre) == 0:
+            return HttpResponseBadRequest("La raza escogida no es valida")
+
+        # Valida r y obtener vacuna 
+        vacuna_nombre = request.POST.get("vacunasbovino")
+        vacuna  =  getvalidVacuna(vacuna_nombre)
+
+        if not vacuna or len(vacuna_nombre) == 0:
+            return HttpResponseBadRequest(f"La vacuna {vacuna_nombre} es invalida")
+
+        fecha_vacuna = request.POST.get("fechavacunabovino")
+        fecha_ultimop = request.POST.get("fechaultimopartobovino")
+        fecha_ultimo_celos = request.POST.get("fechaultimocelobovino")
+
+        NBovino = Bovino()
+        NBovino.codigo_bovino = codigo
+        NBovino.raza_bovino = raza
+        NBovino.hato = hato
+        NBovino.partos = 1
+        NBovino.ultima_vacuna = fecha_vacuna
+        NBovino.ultimo_parto = fecha_ultimop
+        NBovino.fecha_celos = NBovino.fecha_ultimo_celos
+
+        NBovino.save()
+
+        return HttpResponse(f"Bovino {codigo} agregado")
+
 

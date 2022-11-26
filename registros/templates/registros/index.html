@@ -2,44 +2,69 @@
 {% load static %}
 
 {% block title %}
-    Listado
+Listado
 {% endblock %}
-    
+
 
 {% block body %}
-    <div class="fondo-inventario-title">
-        <strong>Registros</strong>
-        <div class="fondo-inventario-bottom">
-            <select name="hato" id="hato">
-                <option value="">Seleccionar Hato</option>
-            </select>
-            <button><b>+</b></button>
-            <button><b>+ </b><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}" alt=""></button>
-        </div>
+
+<style>
+    .contenido-interno{
+        margin: 5%;
+    }
+</style>
+<div class="fondo-inventario-title">
+    <strong>Registros</strong>
+    <div class="fondo-inventario-bottom">
+        <select name="hato" id="hato">
+            <option value="">Seleccionar Hato</option>
+        </select>
+        <button><b>+</b></button>
+        <button><b>+ </b><img class="iconoBarraLateral" src="{% static 'inventario/assets/inventario.png' %}"
+                alt=""></button>
     </div>
-    <div class="fondo-inventario-contenido">
-        <br>
+</div>
+<div class="fondo-inventario-contenido">
+    <div class="contenido-interno">
+        
         <div class="filtros">
-            <select name="" id="">
+
+
+            <input type="text" id="q" placeholder="Buscar por codigo"> <button onclick="actualizar_bovino"><img src="{% static 'inventario/assets/lupa.svg' %}" alt="No cargo la imagen" width="10pt"></button>
+
+            <select name="" id="meses">
                 <option value="">Mes de registro</option>
             </select>
-
-            <select name="" id="">
-                <option value="">Ordenar por</option>
-            </select>
-            <select name="" id="">
+            <select name="" id="ordenarpor">
                 <option value="">Ultimo</option>
                 <option value="">Primero</option>
             </select>
 
         </div>
-        <table>
-            <thead></thead>
-            <tbody></tbody>
-            <tfoot></tfoot>
-        </table>
+        <div class="tabla-int">
+            <table class="tablaInventario">
+                <tr>
+                    <th>CODIGO</th>
+                    <th>HATO</th>
+                    <th>VACUNAS</th>
+                    <th>PARTOS</th>
+                    <th>ULTIMO P</th>
+                    <th>CELO</th>
+                </tr>
+    
+                <tr>
+                    <td>001</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>13/06/2022</td>
+                    <td>13/06/2022</td>
+                </tr>
+            </table>
+        </div>
 
 
     </div>
-{% endblock %}
 
+</div>
+{% endblock %}

@@ -8,9 +8,19 @@ class Raza(models.Model):
     def __str__(self):
         return self.nombre_raza
 
+class Frecuencia(models.Model):
+    nombre_frecuencia = models.CharField(max_length = 150)
+    duracion_frecuencia = models.IntegerField(default = 1)
+
+    def __str__(self):
+        return f"{self.nombre_frecuencia} : {self.duracion_frecuencia}"
+
 class Vacuna(models.Model):
+
     nombre_vacuna = models.CharField(max_length=50)
     descripcion_vacuna = models.CharField( max_length=200)
+    frecuencia = models.ForeignKey(Frecuencia, null=True, on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.nombre_vacuna
@@ -30,8 +40,9 @@ class Bovino(models.Model):
     vacunas_bovino = models.ManyToManyField(Vacuna)
 
     partos = models.IntegerField()
-    ultimo_parto = models.DateField(auto_now=False, auto_now_add=False, null=True)
-    fecha_celos =  models.DateField(auto_now=False, auto_now_add=False, null=True)
+    ultima_vacuna = models.DateField(auto_now = False, null=True)
+    ultimo_parto = models.DateField(auto_now=False, null=True)
+    fecha_celos =  models.DateField(auto_now=False, null=True)
 
     def display_vacunas(self):
         """Create a string for the Vacuna. This is required to display Vacuna in Admin."""
@@ -45,7 +56,7 @@ class Bovino(models.Model):
         return f"{fecha.day}/{fecha.month}/{fecha.year}"
 
     def display_fecha_celos(self):
-        """Mostrar LA fecha celos como texto plano"""
+        """Mostrar la fecha celos como texto plano"""
         fecha = self.fecha_celos
         return f"{fecha.day}/{fecha.month}/{fecha.year}"    
         

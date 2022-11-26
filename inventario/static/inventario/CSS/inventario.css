@@ -40,6 +40,7 @@ input{ border: 0; border-bottom: 1px solid black; width: 250px; }
     width: 90px;
     height: 30px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .fondo-inventario-bottom{
@@ -57,7 +58,7 @@ input{ border: 0; border-bottom: 1px solid black; width: 250px; }
 }
 
 .fondo-inventario-contenido{
-    width: 80%;
+    width: 79%;
     height: 85%;
     margin-left: 1.7%;
     border-radius: 20px;
@@ -91,3 +92,8 @@ input{ border: 0; border-bottom: 1px solid black; width: 250px; }
 .agregar-raza-inventario select{ font-size: 15px; margin-top: 20px; }
 .flex-inventario, .agregar-raza-inventario{ width: 50%; }
 .agregar-raza-inventario select{ width: 170px; margin-left: 10px; }
+
+.tablaInventario{ width: 90%; margin-left: 4%; margin-top: 2%; border-collapse: collapse; }
+.tablaInventario td{ text-align: center; }
+.tablaInventario td, th{ border: 1px solid #dddddd; }
+.tablaInventario tr:nth-child(even) { background-color: #dddddd; }

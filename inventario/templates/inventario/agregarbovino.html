@@ -1,38 +1,35 @@
+<form action="agregar_bovino" method="post">
 <div style="text-align: left;">
-    <span>Nuevo Codigo: </span><input type="text" maxlength="15"> <br><br>
+    <span>Nuevo Codigo: </span><input name="codigobovino" type="text" maxlength="15"> <br><br>
 <span>Selecione el Hato: </span>
 
-<select name="" id="hatosbovino" onclick="actualizar_hatos(this.id);">
+<select name="hatosbovino" id="hatosbovino" onfocus="actualizar_hatos(this.id);">
     <option value="">Elegir Hato</option>
 </select>
 
 <br><br>
 
 <span>Seleccione la raza:</span>
-<select name="" id="razasbovino" onclick="actualizar_razas(this.id)" >
+<select name="razabovino" id="razasbovino" onfocus="actualizar_razas(this.id)" >
     <option value="">Elegir Raza</option>
-    <option value="">Brahmán</option>
-    <option value="">Brangus</option>
-    <option value="">Pardo suizo</option>
 </select>
 
 <br><br>
-<span>Vacunas: </span> <select name="" id="">
+<span>Vacunas: </span> <select name="vacunasbovino" id="vacunasbovino" onfocus="actualizar_vacunas(this.id);">
     <option value="">Elegir vacunas</option>
-    <option value="Brucelosis">Brucelosis</option>
-    <option value="Leptospirosis">Leptospirosis</option>
-    <option value="Complejos IBR-DVB">Complejos IBR-DVB</option>
 </select>
 <br><br>
         
-<span>Ultima Fecha de Vacuna:</span>   <input type="date">
+<span>Ultima Fecha de Vacuna:</span>   <input name="fechavacunabovino"  type="date">
 <br><br>
-<span>Ultima Fecha de Parto:</span><input type="date">
+<span>Ultima Fecha de Parto:</span><input name="fechaultimopartobovino" type="date">
  <br>  <br>
-<span>Ultima Fecha de Celo:</span><input type="date">
+<span>Ultima Fecha de Celo:</span><input name="fechaultimocelobovino" type="date">
 <br><br>
 
 </div>
+
+</form>
 
 <script>
     
